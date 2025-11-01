@@ -14,9 +14,9 @@ st.markdown("Calculs basés sur les lois fournies (relations isentropiques, atmo
 st.sidebar.header("Paramètres environnementaux")
 h = st.sidebar.number_input("Altitude de vol h [m]", value=0, step=100)  # altitude
 # Atmosphère standard (troposphère)
-T0 = 288.15 - 0.0065 * h
+T0 = 288.15 - 6.5 * h
 # Pour la pression standard on utilise la formule de l'atmosphère standard (approximation troposphère)
-P0 = 101325.0 * (1 - 0.0065 * h / 288.15) ** 5.2559
+P0 = 101325.0 * (1 - 6.5 * h / 288.15) ** 5.2559
 
 st.sidebar.markdown("Valeurs initiales calculées")
 st.sidebar.write(f"T0 = {T0:.2f} K")
